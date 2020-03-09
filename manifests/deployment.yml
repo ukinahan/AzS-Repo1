@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "edisoncluster1"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "edisoncluster1"
+    spec:
+      containers:
+        - name: "edisoncluster1"
+          image: "edisonregistry.azurecr.io/edisoncluster1"
+          ports:
+          - containerPort: 80
