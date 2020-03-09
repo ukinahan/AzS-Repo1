@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "edisoncluster1"
+    labels:
+        app: "edisoncluster1"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: edisoncluster16572-edisoncluster1.8d46f631db8c4c4b9f1f.eastus2.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "edisoncluster1"
+                servicePort: 80
